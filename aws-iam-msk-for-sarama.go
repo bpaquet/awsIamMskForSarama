@@ -1,9 +1,5 @@
 package awsIamMskForSarama
 
-import (
-	"github.com/Shopify/sarama"
-)
-
 type GeneratorFunc struct {
 	AwsRegion string
 	addr      string
@@ -11,7 +7,7 @@ type GeneratorFunc struct {
 	done      bool
 }
 
-func (x *GeneratorFunc) Begin(addr string, config *sarama.Config) error {
+func (x *GeneratorFunc) Begin(addr string) error {
 	x.addr = addr
 	x.userAgent = "awsIamMskForSarama"
 	x.done = false
